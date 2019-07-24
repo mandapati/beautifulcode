@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+<meta charset="UTF-8">
+<title>Trello Board Layout with CSS Grid & Flexbox</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Courgette:400,700">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+<link rel="stylesheet" href="style.css">
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
+-->        <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+	<script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
+<style type="text/css">
+.orders {
+    display: flex;
+    flex-wrap: nowrap;
+    margin-right: auto;
+    margin-left: auto;
+}
+section.X {
+    margin-right: auto;
+    margin-left: auto;
+}
+section.Y {
+    float:left;
+}
+	.button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 10px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 2px 2px;
+  cursor: pointer;
+ font-weight: bold;
+}
+</style>
+</head>
+
+<body>
+
+<!-- Masthead -->
+<header class="masthead">
+  <div class="boards-menu">
+    <button class="boards-btn btn"><i class="fab fa-trello boards-btn-icon"></i>Boards</button>
+    <div class="board-search">
+      <input type="search" class="board-search-input" aria-label="Board Search">
+      <i class="fas fa-search search-icon" aria-hidden="true"></i> </div>
+  </div>
+  <div class="logo">
+    <h1><i class="fab fa-trello logo-icon" aria-hidden="true"></i>Trello</h1>
+  </div>
+  <div class="user-settings">
+    <button class="user-settings-btn btn" aria-label="Create"> <i class="fas fa-plus" aria-hidden="true"></i> </button>
+    <button class="user-settings-btn btn" aria-label="Information"> <i class="fas fa-info-circle" aria-hidden="true"></i> </button>
+    <button class="user-settings-btn btn" aria-label="Notifications"> <i class="fas fa-bell" aria-hidden="true"></i> </button>
+    <button class="user-settings-btn btn" aria-label="User Settings"> <i class="fas fa-user-circle" aria-hidden="true"></i> </button>
+  </div>
+</header>
+<!-- End of masthead --> 
+
+<!-- Board info bar -->
+<section class="board-info-bar">
+  <div class="board-controls">
+    <button class="board-title btn">
+    <h2>Web Development</h2>
+    </button>
+    <button class="star-btn btn" aria-label="Star Board"> <i class="far fa-star" aria-hidden="true"></i> </button>
+    <button class="personal-btn btn">Personal</button>
+    <button class="private-btn btn"><i class="fas fa-briefcase private-btn-icon" aria-hidden="true"></i>Private</button>
+  </div>
+  <button class="menu-btn btn"><i class="fas fa-ellipsis-h menu-btn-icon" aria-hidden="true"></i>Show Menu</button>
+</section>
+	<section class="Y" >
+    <div style="float: right;padding-right: 150px;"><button class="add-list-btn btn" id="btnCreateNewList">Add a list</button>
+    <div style="display: none;" id="addlistblock">
+      <form id="formList">
+        <input  type="text" id="listname" name="listname" placeholder="Enter list title..." autocomplete="off" dir="auto" maxlength="512">
+        <div class="list-add-controls u-clearfix">
+          <input class="" type="submit" value="Add List"><span class="Close" style="color: #FFFFFF;font-weight: bold;font-family: Constantia, 'Lucida Bright', 'DejaVu Serif', Georgia, 'serif'; font-size: 14px;content: x;">X</span></div>
+      </form>
+    </div>
+		</div>
+  </section>
+<!-- End of board info bar --> 
+
+<!-- Lists container -->
+<section class="lists-container" id="orders">
+  <div class="list" id="list1">
+    <h3 class="list-title">Pending Tasks </h3>
+    <ul class="list-items droptrue">
+      <li><span>Complete mock-up for client website</span></li>
+      <li><span>Email mock-up to client for feedback</span></li>
+      <li><span>Update personal website header background image</span></li>
+      <li><span>Update personal website heading fonts</span></li>
+    </ul>
+    <button class="add-card-btn btn" id="add-card-btn1">Add a card</button>
+	  
+  </div>
+  <div class="list" id="list2">
+    <h3 class="list-title">On Hold Tasks</h3>
+    <ul class="list-items droptrue">
+      <li><span>Clear email inbox</span></li>
+      <li><span>Finalise requirements for client web design</span></li>
+      <li><span>Begin work on mock-up for client website</span></li>
+    </ul>
+    <button class="add-card-btn btn" id="add-card-btn2">Add a card</button>
+  </div>
+  <div class="list" id="list3">
+    <h3 class="list-title">Doing</h3>
+    <ul class="list-items droptrue">
+      <li><span>Analog Clock</span></li>
+      <li><span>Basic Quiz</span></li>
+      <li><span>Bill/Cost Splitter</span></li>
+      <li><span>Countdown Timer</span></li>
+      <li><span>Form Validator</span></li>
+    </ul>
+    <button class="add-card-btn btn" id="add-card-btn3">Add a card</button>
+  </div>
+	
+  
+</section>
+<div style="display: none;  position:absolute; margin-top:30%; " id="AddCard">
+      <form id="CardList">
+        <input  type="text" id="Cardname" name="Cardname" placeholder="Enter Card title..." autocomplete="off" dir="auto" maxlength="512">
+        <div class="list-add-controls u-clearfix">
+          <input class="" type="submit" value="Add Card">
+          <span class="CardClose ui-icon ui-icon-circlesmall-close" style="font-weight: bold;"></span></div>
+      </form>
+    </div>
+<!-- End of lists container --> 
+
+ 
+
+
+<script type="text/javascript" src="javascript_file.js"></script>
+</body>
+</html>
