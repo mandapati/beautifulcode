@@ -31,7 +31,8 @@ section.Y {
   background-color: #4CAF50;
   border: none;
   color: white;
-  padding: 10px 10px;
+		border-radius: 8px;
+  padding: 6px 6px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -78,15 +79,7 @@ section.Y {
   <button class="menu-btn btn"><i class="fas fa-ellipsis-h menu-btn-icon" aria-hidden="true"></i>Show Menu</button>
 </section>
 	<section class="Y" >
-    <div style="float: right;padding-right: 150px;"><button class="add-list-btn btn" id="btnCreateNewList">Add a list</button>
-    <div style="display: none;" id="addlistblock">
-      <form id="formList">
-        <input  type="text" id="listname" name="listname" placeholder="Enter list title..." autocomplete="off" dir="auto" maxlength="512">
-        <div class="list-add-controls u-clearfix">
-          <input class="" type="submit" value="Add List"><span class="Close" style="color: #FFFFFF;font-weight: bold;font-family: Constantia, 'Lucida Bright', 'DejaVu Serif', Georgia, 'serif'; font-size: 14px;content: x;">X</span></div>
-      </form>
-    </div>
-		</div>
+    
   </section>
 <!-- End of board info bar --> 
 
@@ -124,14 +117,22 @@ section.Y {
     <button class="add-card-btn btn" id="add-card-btn3">Add a card</button>
   </div>
 	
-  
+  <div style="float: right;width: 300px; display: block;" class="addlistdiv"><button class="add-list-btn btn" id="btnCreateNewList">Add a list</button>
+    <div style="display: none; background-color: #FFFFFF; padding: 20px; width: 200px;" id="addlistblock" >
+      <form id="formList">
+        <input  type="text" id="listname" name="listname" placeholder="Enter list title..." autocomplete="off" dir="auto" maxlength="512">
+        <div class="list-add-controls u-clearfix">
+          <input class="button" type="submit" value="Add List"><span class="Close" style="color: #414141;font-weight: bold;font-family: Constantia, 'Lucida Bright', 'DejaVu Serif', Georgia, 'serif'; font-size: 14px;">X</span></div>
+      </form>
+    </div>
+		</div>
 </section>
-<div style="display: none;  position:absolute; margin-top:30%; " id="AddCard">
+<div style="display: none;  position:absolute; margin-top:30%;margin-left: 20%; width: 200px;background-color: #FFFFFF; padding: 20px;" id="AddCard">
       <form id="CardList">
         <input  type="text" id="Cardname" name="Cardname" placeholder="Enter Card title..." autocomplete="off" dir="auto" maxlength="512">
         <div class="list-add-controls u-clearfix">
-          <input class="" type="submit" value="Add Card">
-          <span class="CardClose ui-icon ui-icon-circlesmall-close" style="font-weight: bold;"></span></div>
+          <input class="button" type="submit" value="Add Card">
+          <span class="CardClose" style="color: #414141;font-weight: bold;font-family: Constantia, 'Lucida Bright', 'DejaVu Serif', Georgia, 'serif'; font-size: 14px;">X</span></div>
       </form>
     </div>
 <!-- End of lists container --> 
