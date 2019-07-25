@@ -10,9 +10,8 @@
 <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
 <link rel="stylesheet" href="style.css">
 <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
--->        <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
-	<script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-
+--><script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 <style type="text/css">
 .orders {
     display: flex;
@@ -25,22 +24,27 @@ section.X {
     margin-left: auto;
 }
 section.Y {
-    float:left;
+    float: left;
 }
-	.button {
-  background-color: #4CAF50;
-  border: none;
-  color: white;
-		border-radius: 8px;
-  padding: 6px 6px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 2px 2px;
-  cursor: pointer;
- font-weight: bold;
+.button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    border-radius: 8px;
+    padding: 6px 6px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 2px 2px;
+    cursor: pointer;
+    font-weight: bold;
 }
+	.addformcard{
+		width: 200px;
+		display: none;
+	}
+	
 </style>
 </head>
 
@@ -78,9 +82,7 @@ section.Y {
   </div>
   <button class="menu-btn btn"><i class="fas fa-ellipsis-h menu-btn-icon" aria-hidden="true"></i>Show Menu</button>
 </section>
-	<section class="Y" >
-    
-  </section>
+<section class="Y" > </section>
 <!-- End of board info bar --> 
 
 <!-- Lists container -->
@@ -94,7 +96,6 @@ section.Y {
       <li><span>Update personal website heading fonts</span></li>
     </ul>
     <button class="add-card-btn btn" id="add-card-btn1">Add a card</button>
-	  
   </div>
   <div class="list" id="list2">
     <h3 class="list-title">On Hold Tasks</h3>
@@ -104,7 +105,6 @@ section.Y {
       <li><span>Begin work on mock-up for client website</span></li>
     </ul>
     <button class="add-card-btn btn" id="add-card-btn2">Add a card</button>
-	   
   </div>
   <div class="list" id="list3">
     <h3 class="list-title">Doing</h3>
@@ -116,31 +116,21 @@ section.Y {
       <li><span>Form Validator</span></li>
     </ul>
     <button class="add-card-btn btn" id="add-card-btn3">Add a card</button>
-	   
   </div>
-	
-  <div style="float: right;width: 300px; display: block;" class="addlistdiv"><button class="add-list-btn btn" id="btnCreateNewList">Add a list</button>
+  <div style="display: block; float: left;border: 0px;padding: 0px;width: 200px;" class="addlistdiv">
+    <div style="float: left;display: block;"><button class="add-list-btn btn" id="btnCreateNewList">Add a list</button></div>
     <div style="display: none; background-color: #FFFFFF; padding: 20px; width: 200px;" id="addlistblock" >
       <form id="formList">
         <input  type="text" id="listname" name="listname" placeholder="Enter list title..." autocomplete="off" dir="auto" maxlength="512">
         <div class="list-add-controls u-clearfix">
-          <input class="button" type="submit" value="Add List"><span class="Close" style="color: #414141;font-weight: bold;font-family: Constantia, 'Lucida Bright', 'DejaVu Serif', Georgia, 'serif'; font-size: 14px;">X</span></div>
+          <input class="button" type="submit" value="Add List">
+          <span class="Close" style="color: #414141;font-weight: bold;font-family: Constantia, 'Lucida Bright', 'DejaVu Serif', Georgia, 'serif'; font-size: 14px;">X</span></div>
       </form>
     </div>
-		</div>
+  </div>
 </section>
-<!--<div style="display: none;  position:absolute; margin-top:30%;margin-left: 20%; width: 200px;background-color: #FFFFFF; padding: 20px;" id="AddCard">
-      <form id="CardList">
-        <input  type="text" id="Cardname" name="Cardname" placeholder="Enter Card title..." autocomplete="off" dir="auto" maxlength="512">
-        <div class="list-add-controls u-clearfix">
-          <input class="button" type="submit" value="Add Card">
-          <span class="CardClose" style="color: #414141;font-weight: bold;font-family: Constantia, 'Lucida Bright', 'DejaVu Serif', Georgia, 'serif'; font-size: 14px;">X</span></div>
-      </form>
-    </div>-->
+
 <!-- End of lists container --> 
-
- 
-
 
 <script type="text/javascript" src="javascript_file.js"></script>
 </body>

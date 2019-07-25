@@ -115,9 +115,9 @@ $(document).ready(function () {
 
 
 	$(document).on("click", ".add-card-btn", function (event) {
-		$(".addformcard").remove();
+		$("div.addformcard").remove();
 		var list = $(this).parent('div').attr('id');
-		$(this).after('<div style="display: none; margin-top:5px; " id="AddCard" class="addformcard"><form id="CardList" list-id="' + list + '" ><input  type="text" id="Cardname" name="Cardname" placeholder="Enter Card title..." autocomplete="off" dir="auto" maxlength="512"><div class="list-add-controls u-clearfix"><input class="button" type="submit" value="Add Card"><span class="CardClose" style="color: #FFFFFF;font-weight: bold;font-family: Constantia, Lucida Bright,DejaVu Serif, Georgia, serif; font-size: 14px;">X</span></div></form></div>');
+		$(this).after('<div style="display: none; margin-top:5px;width: 150px;" id="AddCard" class="addformcard"><form id="CardList" list-id="' + list + '" ><input  type="text" id="Cardname" name="Cardname" placeholder="Enter Card title..." autocomplete="off" dir="auto" maxlength="160"><div class="list-add-controls u-clearfix"><input class="button" type="submit" value="Add Card"><span class="CardClose" style="color: #414141;font-weight: bold;font-family: Constantia, Lucida Bright,DejaVu Serif, Georgia, serif; font-size: 14px;">X</span></div></form></div>');
 		$('#AddCard').show();
 
 
