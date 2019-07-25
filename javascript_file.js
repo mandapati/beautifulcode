@@ -29,9 +29,11 @@ $(document).ready(function () {
 		$("#addlistblock").hide();
 	});
 
-	$(".CardClose").click(function () {
-		$("#AddCard").hide();
+	$(document).on("click", ".CardClose", function () {
+		$(".addformcard").remove();
 	});
+
+
 
 	$(".Close").click(function () {
 		$("#addlistblock").hide();
@@ -50,24 +52,24 @@ $(document).ready(function () {
 		var listName = $('#listname').val();
 		var listcont = $('.list').length + 1;
 		//$("#orders").append('<div class="list" id="list'+listcont+'"><h3 class="list-title">'+listName+'</h3><ul class="list-items droptrue"></ul><button class="add-card-btn btn">Add a card</button></div>');
-		$(".addlistdiv:last").before('<div class="list" id="list' + listcont + '"><h3 class="list-title">' + listName + '</h3><ul class="list-items droptrue"></ul><button class="add-card-btn btn">Add a card</button></div>');
+		$(".addlistdiv:last").before('<div class="list" id="list' + listcont + '"><h3 class="list-title">' + listName + '</h3><ul class="list-items droptrue"></ul><button class="add-card-btn btn">Add a card</button></div><div class="addformcard"></div>');
 		$("#addlistblock").hide();
 		initSortable();
 	}
 	/* To add a list code start End here */
 
-	$(document).on('click', '.add-card-btn', function () {
-		$("#AddCard").show();
-		var list = $(this).parent('div').attr('id');
-		$("#CardList").attr('list-id', list);
-	});
 
 
-	$("#CardList").on("submit", function (event) {
+	$(document).on("submit", "#CardList", function (event) {
 		event.preventDefault();
 		var list = $(this).attr('list-id');
 		addCardList(list);
 	});
+
+
+
+
+
 
 	function addCardList(list) {
 		var Cardname = $('#Cardname').val();
@@ -110,15 +112,15 @@ $(document).ready(function () {
 		$(this).closest('li').children('span').show();
 	});
 	/* edit item description End */
-	
-	/*$(document).on("click", ".add-card-btn", function () {
+
+
+	$(document).on("click", ".add-card-btn", function (event) {
+		$(".addformcard").remove();
 		var list = $(this).parent('div').attr('id');
-			var copy = '<div style="display: none;  position:absolute; margin-top:30%;" id="AddCard"><form id="CardList"><input  type="text" id="Cardname" name="Cardname" placeholder="Enter Card title..." autocomplete="off" dir="auto" maxlength="512"><div class="list-add-controls u-clearfix"><input class="button" type="submit" value="Add Card">          <span class="CardClose" style="color: #FFFFFF;font-weight: bold;font-family: Constantia, Lucida Bright,DejaVu Serif, Georgia, serif; font-size: 14px;">X</span></div></form></div>';
-		
-		    $(this).closest('.list').append(copy);
+		$(this).after('<div style="display: none; margin-top:5px; " id="AddCard" class="addformcard"><form id="CardList" list-id="' + list + '" ><input  type="text" id="Cardname" name="Cardname" placeholder="Enter Card title..." autocomplete="off" dir="auto" maxlength="512"><div class="list-add-controls u-clearfix"><input class="button" type="submit" value="Add Card"><span class="CardClose" style="color: #FFFFFF;font-weight: bold;font-family: Constantia, Lucida Bright,DejaVu Serif, Georgia, serif; font-size: 14px;">X</span></div></form></div>');
+		$('#AddCard').show();
 
-		});*/
-	
 
+	});
 
 });
